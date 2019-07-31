@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RespuestaTopHeadLines } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,6 @@ export class NoticiasService {
   }
 
   getTopHeadLines(){
-    return this.http.get(`https://newsapi.org/v2/everything?q=bitcoin&from=2019-06-30&sortBy=publishedAt&apiKey=71468da5ef6144bf87efbacc8f3435a0`)
+    return this.http.get<RespuestaTopHeadLines>(`https://newsapi.org/v2/everything?q=bitcoin&from=2019-06-30&sortBy=publishedAt&apiKey=71468da5ef6144bf87efbacc8f3435a0`)
   }
 }
