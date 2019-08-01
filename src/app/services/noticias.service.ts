@@ -11,7 +11,10 @@ export class NoticiasService {
 
   }
 
-  getTopHeadLines(){
-    return this.http.get<RespuestaTopHeadLines>(`https://newsapi.org/v2/everything?q=bitcoin&from=2019-06-30&sortBy=publishedAt&apiKey=71468da5ef6144bf87efbacc8f3435a0`)
+  getTopHeadLines() {
+    return this
+    .http
+    .get<RespuestaTopHeadLines>
+    (`https://newsapi.org/v2/top-headlines?country=us&apiKey=5c745cce56944855a3e831b00ce7882e`);
   }
 }
