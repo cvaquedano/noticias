@@ -12,7 +12,7 @@ import { Article } from 'src/app/interfaces/interfaces';
 })
 export class Tab2Page implements OnInit {
 
-@ViewChild(IonSegment, {static: false}) segment: IonSegment;
+@ViewChild(IonSegment, {static: true}) segment: IonSegment;
 
   categorias: string[] = [
               'business',
@@ -27,6 +27,7 @@ export class Tab2Page implements OnInit {
 
   constructor( private noticiasService: NoticiasService) {}
   ngOnInit() {
+    this.segment.value = this.categorias[0];
     this.cargarNoticias(this.categorias[0]);
   }
 
@@ -36,13 +37,21 @@ export class Tab2Page implements OnInit {
 
   }
 
-  cargarNoticias(cateogira: string) {
+  cargarNoticias(cateogira: string, event?) {
 
 
       this.noticiasService.getTopHeadlinesCategoria(cateogira)
       .subscribe( resp => {
         this.noticias.push(...resp.articles);
+
+        if  (event) {
+          event.target.complete();
+        }
       });
+  }
+
+  loadData(event) {
+    this.cargarNoticias(this.segment.value, event);
   }
 }
 
