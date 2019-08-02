@@ -9,7 +9,7 @@ import { RespuestaTopHeadLines, Article } from 'src/app/interfaces/interfaces';
 })
 export class Tab1Page implements OnInit {
 
-  noticias: Article[]= [];
+  noticias: Article[] = [];
 
   constructor(private noticiasService: NoticiasService) {
 
