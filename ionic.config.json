@@ -1,5 +1,8 @@
 {
   "name": "noticial",
-  "integrations": {},
-  "type": "angular"
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "4bb6a34b"
 }
