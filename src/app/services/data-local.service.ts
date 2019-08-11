@@ -47,6 +47,6 @@ export class DataLocalService {
     this.noticias = this.noticias.filter(noti => noti.title !== noticia.title);
     this.storage.set('favoritos', this.noticias);
 
-    this.prensetToast( 'Eliminado de favoritos');
+    this.prensetToast( 'Borrado de favoritos');
   }
 }
