@@ -18,5 +18,5 @@
    </ion-slide>
  </ion-slides>
 
-  <app-noticias *ngIf="datalocalService.noticias.length > 0" [noticias]="datalocalService.noticias"></app-noticias>
+  <app-noticias [enFavoritos]="true" *ngIf="datalocalService.noticias.length > 0" [noticias]="datalocalService.noticias"></app-noticias>
 </ion-content>
